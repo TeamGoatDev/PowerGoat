@@ -35,13 +35,15 @@ function setUpSVRPostHyperV()
 
     #Set Up du folder d'ordinateur virtuel
     Set-VMHost -VirtualHardDiskPath C:\_VirDisque -VirtualMachinePath C:\_VirOrdi
+
+    #Affiche les commutateurs
+    Get-VMSwitch
 }
 
 # 5 - Changer les paramètres de mémoire d'Hyper-V
 function setUpMemoireHyperV()
 {
     Set-VMMemory -VMName Serveur1 -DynamicMemoryEnabled $true -MinimumBytes 1GB -MaximumBytes 2GB
-    Set-VMBios -VMName Serveur1 -StartupOrder @("IDE","LegacyNetworkAdapter","CD","Floppy")
 }
 
 #Add-WindowsFeature RSAT-Hyper-V-Tools -IncludeAllSubFeature
@@ -49,3 +51,4 @@ function setUpMemoireHyperV()
 
 #Set-VMMemory -VMName Serveur1 -DynamicMemoryEnabled $true -MinimumBytes 1GB -MaximumBytes 2GB
 #Set-VMBios -VMName Serveur1 -StartupOrder @("IDE","LegacyNetworkAdapter","CD","Floppy")
+
