@@ -3,7 +3,8 @@
 #Ordinateur cible : Serveur 1
 
 #Ajout d'addresse IP
-New-NetIPAddress -IPAddress "10.57.154.113" -InterfaceAlias "Ext" -PrefixLength 16
+New-NetIPAddress -IPAddress "10.57.154.113" -InterfaceAlias "Ext Config" -PrefixLength 16
+New-NetIPAddress -IPAddress "10.57.154.114" -InterfaceAlias "Ext Config" -PrefixLength 16
 
 #Création de users
 net user "Jean" "AAAaaa111" /ADD
